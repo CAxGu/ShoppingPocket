@@ -1,0 +1,80 @@
+<div class="container content content_cart">
+    <div class="clearfix mt-2 mb-2">
+            <h1 class="float-left">Mi Carrito</h1>
+            <!-- (not implemented yet) -->
+            <!-- <a *ngIf="productssize!=0"[routerLink]="" class="heartfav btn pull-xs-right btn-cart float-right">
+                    <i class="fa fa-heart"></i> Guardar Carrito</a> -->
+    </div>
+    <span *ngIf="productssize!=0" class="alert">* Si tiene un cupón, utilícelo antes de confirmar su cuenta</span>
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered table-cart">
+            <tbody>
+            <tr class="thead-dark">
+                <td class="picturetd font-weight-bold">Producto</td>
+                <td class="producttd font-weight-bold">Descripción</td>
+                <td class="udstd font-weight-bold">Uds.</td>
+                <td class="prizetd font-weight-bold">Precio Unitario</td>
+                <td class="opstd"></td>
+                <td class="totalprizeitem font-weight-bold">Total</td>
+            </tr>
+            <tr *ngIf="productssize==0" class="itemrow">
+                <td colspan="6">No hay Productos en el carrito</td>
+            </tr>
+            <tr class="itemrow" *ngFor="let product of products()">
+                <td class="content_row_pic"><img src="../../../assets/images/products/{{product.prod_pic}}"></td>
+                <td class="content_row">
+                    {{product['prod_name']}}
+                </td>
+                <td class="content_row">
+                    <a class="optionUds" title="Quitar Unidad" (click)="removeUds(product)"><i class="fa fa-minus-square"></i></a>
+                    <input class="inputUds" type="text" autocomplete="off" value={{getActualUds(product)}} readonly> 
+                    <a class="optionUds" title="Añadir Unidad" (click)="addUds(product)"><i class="fa fa-plus-square"></i></a>
+                </td>
+                <td class="content_row">{{product['prize']}} €</td>
+                <td class="content_row"><button class="btn btn-danger" (click)="removeProduct(producto)"> Borrar <i class="fa fa-trash"></i></button> </td>
+                <td class="content_row">{{ getTotalItem(product) }} €</td>
+            </tr>
+            <tr *ngIf="productssize!=0">
+                <td colspan="3"></td>
+                <td colspan="2">Total Productos</td>
+                <td>{{ getTotalcart() }} €</td>
+            </tr>
+            <tr class="trdiscount" *ngIf="productssize!=0">
+                    <td colspan="3"></td>
+                    <td colspan="2"><span class="alert">*</span>Cupón Descuento </td>
+                    <td class="tdformdiscount">
+                        <form class="form-inline col-12" [formGroup]="discountForm" (ngSubmit)="submitForm()">
+                                <label class="sr-only" for="inlineFormInput">Name</label>
+                                <input formControlName="discountCode" type="text" class="form-control col-9" id="inlineFormInput" placeholder="ASFASVA5SF41A1ASA">
+                                <button type="submit" class="col-3 btn btn-success">OK</button>
+                                <span class="alert" *ngIf="!discountForm.controls['discountCode'].valid && discountForm.controls['discountCode'].touched">Debe introducir un cupón valido</span>
+                        </form>   
+                    </td>
+            </tr>
+            <tr *ngIf="discountApply">
+                <td colspan="5"></td>
+                <td>-{{percentDiscounted(getTotalcart(),totaldiscount)}} €</td>
+            </tr>
+            <tr *ngIf="productssize!=0">
+                <td colspan="3"></td>
+                <td colspan="2">IVA (21%)</td>
+                <td>{{ getIVA(getTotalcart())}} €</td>
+            </tr>
+            <tr *ngIf="productssize!=0">
+                <td colspan="3"></td>
+                <td colspan="2" class="TOTAL font-weight-bold">TOTAL</td>
+               <td class="TOTAL font-weight-bold">{{ getTotalIVA(getTotalcart(),getIVA(getTotalcart())) }} €</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="row mt-5 buttons_footercart">
+        <div class="col-md-12 clearfix">
+            <button class="btn btn-info float-left" (click)="goBack()"><i class="fa fa-chevron-left"></i> Continuar Comprando</button>
+            <button *ngIf="productssize!=0" class="btn btn-danger ml-1 float-left" (click)="clear()"><i class="fa fa-ban"></i> Vaciar Carrito</button>
+            <a *ngIf="productssize!=0" [routerLink]="['/cart/checkout']" class="btn btn-success pull-xs-right btn-cart float-right">
+              <i class="fa fa-credit-card" aria-hidden="true"></i> Confirmar mi Compra
+            </a>    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+  <div class="container content">
+    <div class="row">
+
+      <div class="col">
+        <h1 class="text-xs-center">Confirmación de Pedido</h1>
+        <p class="text-xs-center">
+        </p>
+        <div id="loader" class="col-md-12">
+          <div class="row">
+              <div class="loader"></div>
+            <div class="col-6">
+              <div class="col-6">
+                Procesando...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="paymentmessage" class="payment-message alert alert-warning">{{message}}</div>
+        <form [formGroup]="checkoutForm"  class="clearfix" method="POST" id="payment-form" (ngSubmit)="getToken()">
+                  <hr class="hr-text mt- mb-4" data-content="Datos Personales">
+
+                  <fieldset class="form-group">
+                      <span>Nombre</span>
+                      <input formControlName="clientName" name="clientName" class="form-control form-control-md"  placeholder="Nombre"  min="2" max="30"  type="text" size="20"  >
+                      <span class="alert" *ngIf="!checkoutForm.controls['clientName'].valid && checkoutForm.controls['clientName'].touched">Este campo es obligatorio y debe contener min. 2 caracteres</span>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                      <span>Apellidos</span>
+                      <input formControlName="clientLastname" name="clientLastname" class="form-control form-control-md"  placeholder="Apellidos"  min="2" max="30"  type="text" size="20" >
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                      <span>DNI</span>
+                      <input formControlName="clientDNI" name="clientDNI" class="form-control form-control-md"  placeholder="DNI"  min="9" max="9" maxlength="9" type="text" size="20" >
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                      <span>Dirección de Entrega</span>
+                      <input formControlName="clientAdress" name="clientAdress" class="form-control form-control-md"  placeholder="Calle"  min="2"  type="text" size="20" ><br>
+                      <input formControlName="clientAdressNumber" name="clientAdressNumber" class="form-control form-control-md"  placeholder="Nº"  min="2"  type="number" size="8" ><br>
+                      <input formControlName="clientAdressCity" name="clientAdressCity" class="form-control form-control-md"  placeholder="Ciudad"  min="2"  type="text" size="20" ><br>
+                      <input formControlName="clientAdressLocate" name="clientAdressLocate" class="form-control form-control-md"  placeholder="Provincia"  min="2"  type="text" size="20" ><br>
+                      <input formControlName="clientCP" name="clientCP" class="form-control form-control-md"  maxlength="5" placeholder="CP"  min="2" max="5" type="number" size="8" >                                 
+                  </fieldset>
+
+
+                  <fieldset class="form-group">
+                    <span>Email</span>
+                    <input formControlName="clientMail" name="clientMail" class="form-control form-control-md"  placeholder="shopping@pocket.tk"  min="2"  type="email" size="20" >
+                 </fieldset>
+
+                  <fieldset class="form-group">
+                      <span>Teléfono de Contacto</span>
+                      <input formControlName="clientPhone" name="clientPhone" class="form-control form-control-md"  placeholder="123456789"  min="9" max="9" maxlength="9"  type="phone" size="20" >
+                  </fieldset>
+
+                  <hr class="hr-text mt-5 mb-4" data-content="Datos de Pago">
+                  <fieldset class="form-group">
+                      <span>Titular de la Tarjeta</span>
+                      <input formControlName="titularName" name="titular-name" class="form-control form-control-md" placeholder="Titular" min="2" max="30"  type="text" size="20" >
+                    </fieldset>
+
+                  <fieldset class="form-group">
+                    <span>Numero de Tarjeta</span>
+                    <input formControlName="cardNumber" name="card-number" class="form-control form-control-md" placeholder="1234567890123456" maxlength="16" min="16" max="16"  type="text" size="20" data-stripe="number">
+                  </fieldset>
+                  
+                  <fieldset class="form-group">
+                      <label>
+                          <span>Mes de Caducidad</span>
+                          <input formControlName="expiryMonth" name="expiry-month"  class="form-control form-control-md"  maxlength="2" placeholder="MM" min="2" max="2" type="text" size="2" data-stripe="exp_month">
+                        </label>
+                        <label class="ml-3">
+                          <span>Año de Caducidad</span>
+                          <input formControlName="expiryYear" name="expiry-year"  class="form-control form-control-md"  maxlength="2"  placeholder="YY" max="2" min="2" type="text" size="2" data-stripe="exp_year">
+                        </label>
+                  </fieldset>
+                  
+                  <fieldset class="form-group">
+                      <label>
+                          <span>CVC</span>
+                          <input formControlName="cvc" name="cvc" class="form-control form-control-md" placeholder="123" type="text" maxlength="3"  size="4" min="3" max="3" data-stripe="cvc">
+                        </label>
+                   </fieldset>
+
+                   <!-- ( not implemented yet) -->
+                 <!--   <hr class="hr-text mt-5 mb-4" data-content="Transporte">
+
+                   <fieldset class="form-group">
+                      <label>
+                        <span>Envío</span>
+                      </label>
+                   </fieldset> -->
+
+
+            <button class="btn btn-lg btn-success pull-xs-right float-right" type="submit">
+              Enviar
+            </button>            
+          </form>
+      </div>
+
+    </div>
+  </div>

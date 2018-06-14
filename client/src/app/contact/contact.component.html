@@ -1,0 +1,47 @@
+<section class="container content-contact">
+      <h1>Contacto</h1>
+      <h5>Estamos encantados de poder ayudarte con cualquier consulta</h5>
+      <hr/>
+      <div class="container">
+        <div class="row">
+            <span class="alert">* Campos Obligatorios</span>
+        </div>
+          <div class="row">
+              <div class="col img_container">
+                      <img class="img_contact" src="../../assets/images/contact.jpeg"/>
+              </div>
+              <div class="col form_container">
+                      <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                          <div class="form-group">
+                            <label for="contact_name">Nombre</label>:<span class="alert">*</span>
+                            <input formControlName="name" type="text" class="form-control" id="contact_name" placeholder="Tu Nombre"/>
+                          </div>
+                          <span class="alert" *ngIf="!contactForm.controls['name'].valid && contactForm.controls['name'].touched">Este campo es obligatorio y debe contener entre 3 y 25 caracteres</span>
+                          <div class="form-group">
+                            <label for="contact_email">Email</label>:<span class="alert">*</span>
+                            <input formControlName="email" type="email" class="form-control" id="contact_email" placeholder="ejemplo@shoppingpocket.tk"/>
+                          </div>
+                          <span class="alert" *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">Este campo es obligatorio y debe ser valido</span>
+                          <div class="form-group">
+                              <label for="contact_subject">Asunto</label>:<span class="alert">*</span>
+                              <select formControlName="subject" class="form-control" id="contact_subject">
+                                <option [attr.selected]="true" value=""> -- Seleccione el motivo de su consulta--</option>
+                                <option value="Atención al Cliente">Atención al Cliente</option>
+                                <option value="Dudas sobre Stock">Dudas sobre Stock</option>
+                                <option value="Otros">Otros</option>
+                              </select>
+                          </div>
+                          <span class="alert" *ngIf="!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched">Por favor seleccione una opcion ...</span>
+                          <div class="form-group">
+                              <label for="contact_mesage">Mensaje</label>: <span class="alert">*</span>
+                              <textarea formControlName="message" class="form-control" id="contact_mesage" placeholder="Tu Mensaje"></textarea>
+                          </div>
+                          <span class="alert" *ngIf="!contactForm.controls['message'].valid && contactForm.controls['message'].touched">Este campo es obligatorio y debe contener entre 3 y 481 caracteres</span>
+                          <div class="form-group">
+                              <input type="submit" class="form-control btn-success submit-button" id="contact_submit"/>
+                          </div>
+                       </form>
+              </div>
+          </div>
+      </div>
+  </section>

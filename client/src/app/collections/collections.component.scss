@@ -1,0 +1,13 @@
+div.carouselnewcollections{
+
+    div.carousel-inner{
+
+        div.carousel-item{
+
+            > img.carousel-img{
+                max-width:100%;
+                height:auto;
+            }
+        }
+    }
+}

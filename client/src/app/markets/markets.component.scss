@@ -1,0 +1,73 @@
+@import '../../assets/sass/_mixins.scss';
+
+agm-map {
+    max-width: 100%;
+    height: 100%;
+
+    .container{
+
+        .info{
+            padding:10px;
+            
+            p{
+                margin-bottom: 5px;
+       
+               .labelmarker{
+                   font-weight: bold;
+               }
+           }
+        }
+    
+    }
+}
+
+@include responsive(large){
+
+    .col{
+        flex-basis: unset;
+        flex-grow: unset;
+
+        agm-map {
+
+            height: 325px;
+        
+        } 
+    }
+    
+}
+
+
+
+@include responsive(mobile){
+
+    .col{
+
+        article{
+            font-size:14px;
+        }
+
+        agm-map {
+
+            height: 260px;
+        
+        } 
+    }
+    
+}
+
+
+@include responsive(small){
+
+    .col{
+        article{
+            font-size:12px;
+        }
+
+        agm-map {
+
+            height: 200px;
+        
+        } 
+    }
+    
+}

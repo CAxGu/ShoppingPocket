@@ -1,0 +1,218 @@
+@import '../../../assets/sass/_mixins.scss';
+
+.content_cart{
+    overflow: auto;
+
+    div.table-responsive{
+        
+        table{
+
+            tbody{
+                
+                td{
+                    text-align: center;
+
+                    .alert{
+                        padding: 0;
+                    }
+                }
+
+                .TOTAL{
+                    font-size: 22px;
+                }
+
+                tr.thead-dark{
+
+                    td.picturetd,{
+                        width:15%;
+                    }
+
+
+                    td.totalprizeitem{
+                        width:10%;
+                    }
+
+
+                    td.udstd{
+                        width:10%;
+
+                    }
+
+                    td.prizetd{
+                        width:15%;
+                    }
+
+                    td.opstd{
+                        width:10%;
+                    }
+                }
+
+
+                tr.itemrow{
+
+                    td.content_row_pic{
+                        img{
+                            width:98px;
+                            height:98px;
+                        }
+                    }
+
+                    td.content_row{
+                        padding:20px 0;
+
+                        input.inputUds {
+                            width: 3em;
+                            text-align: center;
+                        }
+
+                        a.optionUds{
+                            font-size: 22px;
+                            color:#252a34;
+
+                            &:hover{
+                                color:#FF2E63;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                    
+                }
+            }
+
+        }
+
+    }
+}
+
+@include responsive(normal){
+
+.content_cart{
+
+    div.table-responsive{
+
+        table{
+    
+            tbody{
+                    
+                tr.itemrow{
+    
+                    td.content_row{
+                        padding:20px 0;
+    
+                        input.inputUds {
+                            width: 44px;
+                            text-align: center;
+                        }
+        
+                    }
+                    
+                }
+            }
+    
+        }
+    }
+}
+    
+}
+
+@include responsive(large){
+
+.content_cart{
+
+    div.table-responsive{
+
+        table{
+            font-size: 14px;
+            tbody{
+                    
+                tr.itemrow{
+    
+                    td.content_row{
+
+                        input.inputUds {
+                            width: 25px;
+                            text-align: center;
+                        }
+        
+                    }
+                    
+                }
+            }
+    
+        }
+    }
+}
+}
+
+
+@include responsive(tablet){
+
+.content_cart{
+
+    div.table-responsive{
+
+        table{
+    
+            tbody{
+                    
+                tr.itemrow{
+    
+                    td.content_row{
+
+                        input.inputUds {
+                            width: 100%;
+                            text-align: center;
+                        }
+        
+                    }
+                }
+
+                .trdiscount{
+                    
+                    .tdformdiscount{
+                        form{
+                            padding: 0;
+
+                            input#inlineFormInput{
+                                width: 105px;
+
+                            }
+
+                            .btn-success{
+                                font-size: 15px;
+                                padding: 0 38px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+
+    }
+
+    .buttons_footercart{
+
+        .btn-info{
+            margin:0;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .btn-danger{
+            margin-left:0 !important;
+            margin-bottom:5px !important;
+            width:100%;
+        }
+
+
+        .btn-success{
+            margin:0;
+            width: 100%;
+        }
+
+    }
+}
+    
+}

@@ -1,0 +1,49 @@
+<section class="container content-profile">
+  <section class="user-info">
+    <!-- USER INFORMATION -->
+    <div class="container">
+      <div class="row">
+        <div class="container_info col-xs-12 col-md-10 offset-md-1">
+          <div class="container_img">
+            <img [src]="profile['profile_pic']" class="user-img" />
+          </div>
+          <h4><em>{{ profile.username }}</em></h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER EXTRA INFORMATION CONTAINER -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 offset-md-1">
+                <div class="favorites-toggle">
+                  <ul class="nav nav-pills outline-active">
+                    <li class="nav-item">
+                      <a class="nav-link"
+                         routerLinkActive="active"
+                         [routerLinkActiveOptions]="{ exact: true }"
+                         [routerLink]="['/profile', profile.username]">
+                         Mis Compras
+                      </a>
+                    </li>
+                    <!-- (not implemented yet) -->
+                    <!-- <li class="nav-item">
+                      <a class="nav-link"
+                         routerLinkActive="active"
+                         [routerLinkActiveOptions]="{ exact: true }"
+                         [routerLink]="['/profile', profile.username, 'favorites']">
+                         Carritos Favoritos
+                      </a>
+                    </li> -->
+                  </ul>
+                </div>
+        
+                <router-outlet></router-outlet>
+              </div>
+        
+        </div>
+      </div>
+  </section>
+</section>
+
+

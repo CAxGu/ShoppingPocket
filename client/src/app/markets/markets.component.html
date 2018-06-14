@@ -1,0 +1,56 @@
+<section class="row">
+    <section class="col">
+      <article>
+        <p>
+        ShoppingPocket es una plataforma nacida a partir de las bases de un negocio orientado a la venta ambulante. </p>
+        <p>Al carecer de un establecimiento físico, los productos están disponibles únicamente una vez por semana, dado que los mercados ambulantes 
+        se realizan una vez o dos a la semana por localidad.</p>
+        <p>Esto cierra demasiado las posibilidades de compra para el consumidor final. Por ello, una estupenda oportunidad para usted es la de poder realizar sus compras a través de esta plataforma en cualquier momento desde la comodidad de su hogar,
+        ofreciéndole la posibilidad si así lo desea, de recibir su pedido en casa o bien recogerlo en el puesto apostado en el correspondiente mercado de su localidad.</p>
+        <p>
+        Los mercados en los cuales nos puede encontrar puede verlos localizados en el mapa a continaución o en la siguiente tabla:</p>
+        <p></p>
+          <h5 id="showhide_marketstable">Tabla de Mercados</h5>
+          <div class="container_marketstable">
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Día</th>
+                      <th scope="col">Lugar</th>
+                      <th scope="col">Hora Ini.</th>
+                      <th scope="col">Hora Fin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let location of locations; let i = index">
+                      <th scope="row">{{markets[i].merca_date}}</th>
+                      <td><a href="">{{markets[i].place}}</a></td>
+                      <td>{{markets[i].ini_time}}</td>
+                      <td>{{markets[i].end_time}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </article>
+    </section>
+    <section class="col">
+      <agm-map [latitude]=lat [longitude]=lng [zoom]=zoom>
+        <agm-marker *ngFor="let location of locations; let i = index" [latitude]=location.marketlat [longitude]=location.marketlng>
+            <agm-info-window  [disableAutoPan]="false">
+              <section class="container">
+                  <section class="row">
+                      <img title="Mercado de {{markets[i].place}}" src="../../assets/images/markets/{{markets[i].markerpic}}"/>
+                  </section>
+                  <section class="row info">
+                    <div>
+                      <p><label class="labelmarker">Lugar: </label>{{markets[i].place}}</p>
+                      <p><label class="labelmarker">Día: </label>{{markets[i].merca_date}}</p>
+                      <p><span><Label class="labelmarker">De: </Label>{{markets[i].ini_time}}</span><label> a </label><span>{{markets[i].end_time}}</span></p>
+                    </div>
+                  </section>
+              </section> 
+            </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </section>
+  </section>

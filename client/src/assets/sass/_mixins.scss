@@ -1,0 +1,27 @@
+@mixin responsive ($size){
+    @if $size == normal{
+        @media(max-width: 1199px){
+        @content
+        }
+
+    } @else if $size == large{
+        @media(max-width: 991px){
+        @content
+        }
+
+    } @else if $size == tablet{
+        @media(max-width: 767px){
+        @content
+        }
+
+    } @else if $size == mobile{
+        @media(max-width: 480px){
+        @content
+        }
+
+    } @else if $size == small{
+        @media(max-width: 360px){
+        @content
+        }
+    }
+}

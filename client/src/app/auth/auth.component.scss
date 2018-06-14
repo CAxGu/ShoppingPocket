@@ -1,0 +1,51 @@
+@import '../../assets/sass/_hrCustomStyle';
+@import '../../assets/sass/_mixins.scss';
+
+section.content-auth{
+    background:white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 50px;
+    padding-top:10px;
+
+    .logo{
+        text-align: center;
+    }
+
+    .socialbuttons{
+        color: white;
+    }
+
+}
+
+
+
+@include responsive(large){
+
+    section.content-auth{
+        width: 75%;
+        padding: 25px;
+    
+    }
+    
+}
+
+
+@include responsive(mobile){
+
+    section.content-auth{
+        width: 90%;
+        padding: 10px;
+    
+        .logo{
+            svg{
+                width: 65%; 
+            }
+        }
+
+    }
+    
+}

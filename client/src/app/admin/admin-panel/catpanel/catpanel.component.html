@@ -1,0 +1,36 @@
+<section class="row">
+  <header class="container">
+      <section class="col">
+        <h2>Categorias</h2>
+      </section>
+      <section class="col">
+        <a id=new_cat href="#/adminsp-panel"><button class="btn-default"><i class="fa fa-plus"></i> Añadir</button></a>
+      </section>
+  </header>
+</section>
+<section class="row">
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"><input type="checkbox"/></th>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Foto</th>
+              <th scope="col">Ops.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let maincategory of maincategories;let i = index" [attr.data-index]="i">
+              <td><input id=checkmaincat_{{i}} type="checkbox"/></td>
+              <td scope="row">{{maincategory.id_maincat}}</td>
+              <td>{{maincategory.maincat_name}}</td>
+              <td>{{maincategory.maincat_pic}}</td>
+              <td>
+                <a id=view_{{$index}} href="#/adminsp-panel"><button class="btn btn-info"><i class="fa fa-eye"></i> Ver</button></a>
+                <a id=edit_{{$index}} href="#/adminsp-panel"><button class="btn btn-success"><i class="fa fa-edit"></i> Editar</button></a>
+                <a id=delete_{{$index}} href="#/adminsp-panel"><button class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</button></a>
+              </td>
+            </tr>
+          </tbody>
+        </table> 
+</section>

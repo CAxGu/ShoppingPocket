@@ -1,0 +1,33 @@
+<section class="subcategories-page">
+
+  <section class="container content">
+    <div class="container-fluid">
+      <div class="row">
+        <a class="link_block card" *ngFor="let product of products; let i = index">
+          <a routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="[product.id_prod]">
+            <img class="card-img-top img_cardprod" src="../../assets/images/products/{{product.prod_pic}}" alt=product_{{i}}>
+          </a>
+          <div class="card-body text-white bg-dark mt-2">
+            <a routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[product.id_prod]">
+              <h4 class="card-title">{{product.prod_name}}</h4>
+            </a>
+            <div>
+              <span id="sizeprod{{i}}">Talla:</span> 
+              <span>{{product.size}}</span>
+            </div>
+            <h2 id=prizeprod{{i}} class="card-text">{{product.prize}} <label class="card-text" for=prizeprod{{i}}>€</label></h2>
+            <div id="buttonscard_container">
+              <a routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="[product.id_prod]" class="btn btn-more">Más Info.</a><a (click)="addtoCart(product)" class="btn btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Comprar</a>
+            </div>
+          </div>
+        </a>
+     </div>
+    </div>
+  </section>
+</section>

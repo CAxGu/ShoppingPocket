@@ -1,0 +1,202 @@
+@import '../../assets/sass/_mixins.scss';
+
+.container{
+
+    .row_info{
+        margin: 40px 0;
+/*         text-align: left; */
+        text-justify: left;
+
+        .col_img{            
+            width: 35%;
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+
+        }
+
+        .col_content{
+            width: 65%;
+
+
+            .info-container{
+                div{
+                    padding-bottom: 20px;
+
+                    :first-child{
+                       font-weight: bold;
+                    }
+                    
+                }
+
+                .uds{
+
+                    input.inputUds {
+                        width: 3em;
+                        text-align: center;
+                    }
+
+                    a.optionUds{
+                        font-size: 22px;
+                        color:#252a34;
+
+                        &:hover{
+                            color:#FF2E63;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .button_add{                    
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+@include responsive(tablet){
+
+    .container{
+        .row_info{
+            .col{
+                flex-basis: unset;
+                flex-grow: unset;
+                }
+
+            .col_img{          
+                width:100%;
+
+                img{
+                    float: left;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: relative;
+                }
+
+            }
+            .col_content{
+                width: 100%;
+                padding: 0;
+                padding-top: 20px;
+
+                .info-container{ 
+ 
+                        .dprodtitle{
+                            float: left;
+                            width: 80%; 
+                        }
+
+                        .dprodprice{
+                            float: left;
+                            width: 20%;
+                        }
+
+                        .uds{
+                            float: left;
+                            width:33%;
+                        }
+
+                        .size{
+                            float: left;
+                            width:33%;
+                        }
+
+                        .colors{
+                            float: left;
+                            width:33%;
+                        }
+
+                        .button_add{
+                            float: left;
+                            width: 100%;
+
+                            a.btn.btn-success{
+                                width: 100%;
+                            }
+                    }
+                    
+                    
+                }
+            
+            }
+        }
+    }
+}
+
+
+
+
+@include responsive(mobile){
+
+    .container{
+        .row_info{
+            
+            .col_content{
+                width: 100%;
+                padding: 0;
+                padding-top: 20px;
+
+                .info-container{ 
+ 
+                        .dprodtitle{
+                            h2{
+                                font-size: 24px;
+                            }
+                        }
+
+                        .dprodprice{
+                            h1{
+                                font-size: 24px;
+                            }
+                        }
+                    
+                }
+            
+            }
+        }
+    }
+}
+
+@include responsive(small){
+
+    .container{
+        .row_info{
+            
+            .col_content{
+                width: 100%;
+                padding: 0;
+                padding-top: 20px;
+
+                .info-container{ 
+ 
+                       .size{
+                            box-sizing: border-box;
+                            padding: 25px;
+                            padding-top: 0;                            
+                        }
+                    
+                }
+            
+            }
+        }
+
+        .row_description{
+            box-sizing: border-box;
+            padding: 10px;
+
+            p#prod_description{
+            
+                font-size: 14px;
+            
+            }
+        }
+    }
+}

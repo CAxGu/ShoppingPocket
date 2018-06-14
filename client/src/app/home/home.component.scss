@@ -1,0 +1,16 @@
+@import '../../assets/sass/_mixins.scss';
+
+section.home-page{
+
+    h3.title-sections{
+        color: #252A34;
+        border-bottom: 4px solid #252A34;
+        padding-bottom: 15px;
+        margin: 40px 0 20px 0;
+    }
+
+}
+
+@include responsive(normal){
+
+}

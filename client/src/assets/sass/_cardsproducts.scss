@@ -1,0 +1,157 @@
+@import '../../assets/sass/_mixins.scss';
+
+div.bg-dark{
+    background-color: #252A34 !important;
+
+    a{
+        display: inline-block;
+        margin: 0 1.5%;
+        font-size: 16px;
+
+                            
+            .card-title{
+                    color:white;
+                    min-height: 56px;
+            }          
+
+            &.btn-more {
+                background-color: white;
+                color: black;
+            }
+            
+            &.btn.btn-success i{
+                    font-size: 21px;
+            }
+    }
+    
+}
+
+
+
+@include responsive(normal){
+
+    div.bg-dark{
+        padding: 12px;
+    
+        a{
+            font-size: 12px;
+    
+                                
+                .card-title{
+                        font-size: 20px;
+                        color:white;
+                        min-height: 56px;
+                }          
+    
+                &.btn-more {
+                    background-color: white;
+                    color: black;
+                }
+                
+                &.btn.btn-success i{
+                        font-size: 21px;
+                }
+        }
+        
+    }
+
+}
+
+
+
+
+@include responsive (large){
+
+
+    div.bg-dark{
+        padding: 12px;
+    
+        a{
+            font-size: 13px;
+    
+                                
+                .card-title{
+                        font-size: 20px;
+                        color:white;
+                        min-height: 56px;
+                }          
+
+        }
+
+        h2{
+            font-size: 28px;
+        }
+
+        div#buttonscard_container{
+            a{
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        
+    } 
+
+}
+
+
+
+@include responsive (tablet){
+
+
+    div.bg-dark{
+        padding: 12px;
+    
+        a{
+            font-size: 13px;
+    
+                                
+                .card-title{
+                        font-size: 16px;
+                        color:white;
+                        min-height: 36px;
+                }          
+
+        }
+       
+    } 
+
+}
+
+
+@include responsive (mobile){
+
+a.link_block.card{
+    width: 49%;
+    }
+}
+
+
+
+@include responsive(small){
+
+    div.bg-dark{
+             
+            a{
+                font-size: 13px;
+                       
+                    .card-title{
+                        font-size:14px;
+                        color:white;
+                        min-height: 28px;
+                    }          
+
+            }
+
+            h2{
+                font-size: 23px;
+            }
+
+            div#buttonscard_container{
+                a{
+                    width: 100%;
+                    margin: 5px 0;
+                }
+            }
+            
+        } 
+    }

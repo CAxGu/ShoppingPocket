@@ -1,0 +1,63 @@
+section.content-adminpanel{
+    width: 100%;
+}
+
+
+.panel-content{
+    width: 75%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 15%;
+    background-color: #252A34;
+    padding-bottom: 30%;
+    padding-top: 0;
+    padding-right: 0;
+}
+
+.sidenav ul{
+    padding: 0;
+
+    li{
+        cursor: pointer;
+        border-top: 2px solid #252a34;
+    }
+
+    li  a {
+    padding: 8px 8px 8px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ccc;
+    display: block;
+    transition: 0.3s;
+
+        &:hover {
+            background-color: #e3f2fd;
+            color: black;
+        
+        }
+
+        &.active{
+            background-color: #e3f2fd;
+            color: black;
+        }
+    }
+
+    li.li-hide{
+        display:none;
+        padding-left: 35px;
+    }
+
+    li.li-show{
+        display:inherit;
+        padding-left: 35px;
+    }
+}
+
+
+div.adminpanel_header{
+    max-width: 100%;
+    text-align: center;
+    background-color: #e3f2fd;
+}

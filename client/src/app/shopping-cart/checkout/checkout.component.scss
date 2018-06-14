@@ -1,0 +1,68 @@
+@import '../../../assets/sass/_hrCustomStyle';
+@import '../../../assets/sass/_mixins.scss';
+
+.loader {
+    border: 5px solid #212529;
+     border-radius: 50%;
+      border-top: 5px solid #e3f2fd;
+      width: 25px;
+      height: 25px;
+      -webkit-animation: spin 0.5s linear infinite;
+      animation: spin 0.5s linear infinite;
+  }
+
+
+  .container{
+    .row{
+      div{
+        margin: 0 10%;
+      }
+    }
+  }
+
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+
+  @include responsive(tablet){
+
+    .container{
+      .row{
+        div{
+          margin: 0 5%;
+
+          h1{
+            font-size: 28px;
+          }
+        }
+      }
+    }
+    
+}
+
+
+@include responsive(mobile){
+
+  .container{
+    .row{
+      div{
+        margin: 0 5%;
+
+        h1{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  
+}

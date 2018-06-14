@@ -1,0 +1,45 @@
+<section class="subcategories-page">
+  <section class="container content">
+    <div class="row row_info">
+      <div class="col col_img">
+            <section class="img-container">
+              <img src="../../assets/images/products/{{product['prod_pic']}}">
+            </section>
+      </div>
+      <div class="col col_content">
+           <section class="info-container">
+             <div class="dprodtitle">
+              <h2>{{product['prod_name']}}</h2>
+              <h6>Fabricante: {{product['brand_name']}}</h6>
+             </div>
+             <div class="dprodprice">
+                <h1 id=prizeprod class="card-text">{{product['prize']}} <label class="card-text" for=prizeprod>€</label></h1>
+              </div>
+             <div class="uds">
+               <p>Unidades</p>
+               <a class="optionUds" title="Quitar Unidad" (click)="removeUds()"><i class="fa fa-minus-square"></i></a>
+                <input id="udsProduct" class="inputUds" type="text" placeholder="1" autocomplete="off" value=1> 
+                <a class="optionUds" title="Añadir Unidad" (click)="addUds()"><i class="fa fa-plus-square"></i></a>
+             </div>
+             <div class="size">
+              <p>Talla:</p> 
+              <span>{{product['size']}}</span>
+            </div>
+             <div class="colors">
+                <p>Colores:</p> 
+                <span>{{product['color']}}</span>
+              </div>
+             <div class="button_add">
+                <a (click)="addtoCart(product)" class="btn btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Añadir al Carrito</a>
+             </div>
+           </section>
+      </div>
+    </div>
+    <div class="row row_decription">
+        <h2>Descripción:</h2>
+        <p id="prod_description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus nisi at quam iaculis convallis. Duis euismod, velit ac convallis fringilla, mi tellus rutrum eros, a aliquet arcu sem nec libero. Duis sollicitudin tempor odio at porta. Fusce id risus vel mauris iaculis lacinia eget id velit. Pellentesque ac laoreet turpis, ac facilisis ante. Aliquam at lectus vel ex vestibulum vestibulum. Aenean eleifend suscipit vehicula. Praesent eu risus pulvinar, bibendum diam quis, molestie nulla. Praesent dapibus turpis elit, posuere dignissim elit porttitor at
+        </p>
+    </div>
+  </section>
+</section>

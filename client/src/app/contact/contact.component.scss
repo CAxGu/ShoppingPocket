@@ -1,0 +1,84 @@
+@import '../../assets/sass/_mixins.scss';
+
+section.content-contact{
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+
+    h5{
+       color: #777777;     
+    }
+
+    div.img_container{
+        padding: 0;
+
+        img.img_contact{
+            max-width:100%;
+            height: auto;
+        }
+    }
+
+    form textarea {
+        resize: none;
+     }
+
+    .form-group {
+        margin-bottom: 0.70rem;
+    }
+}
+
+
+
+@include responsive(tablet){
+
+    section.content-contact{
+    
+        .col {
+            flex-basis: unset;
+            flex-grow: unset;
+        }
+
+        div.img_container{
+            width: 100%;
+
+    
+            img.img_contact{
+                max-width:100%;
+                height: auto;
+            }
+        }
+    
+        div.form_container{
+            margin-top:20px;
+            width:100%;
+        }
+
+        form textarea {
+            resize: none;
+         }
+    
+        .form-group {
+            margin-bottom: 0.70rem;
+        }
+    }
+
+    
+}
+
+
+
+@include responsive(mobile){
+
+    section.content-contact{
+    
+        h1{
+            font-size: 30px;
+        }
+
+        h5{
+            font-size: 16px;
+        }
+
+    }
+
+    
+}

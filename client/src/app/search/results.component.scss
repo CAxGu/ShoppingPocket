@@ -1,0 +1,34 @@
+@import '../../assets/sass/_mixins.scss';
+@import '../../assets/sass/cards';
+@import '../../assets/sass/cardsproducts';
+
+
+#nofound {
+    
+    div{
+        margin: 0 20%;
+        width: 60%;
+        img{
+            max-width: 100%;
+            height: auto;  
+        }
+    }
+}
+
+
+
+@include responsive(normal){
+
+    .col{
+        flex-basis: unset;
+        flex-grow: unset;
+
+        agm-map {
+
+            height: 325px;
+        
+        } 
+    }
+    
+}
+

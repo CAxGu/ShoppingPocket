@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <a class="link_block card" *ngFor="let maincategory of maincategories; let i = index" [attr.data-index]="i"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['/categ',maincategory.maincat_name]">
+      <img class="card-img-top img_cardmaincat" src="../../assets/images/maincategories/{{maincategory.maincat_pic}}" alt=maincat_{{i}}>
+      <div class="card-body">
+        <h5 class="card-title">{{maincategory.maincat_name}}</h5>
+      </div>
+    </a>
+  </div>
+</div>

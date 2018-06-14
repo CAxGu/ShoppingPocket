@@ -1,0 +1,78 @@
+@import '../../assets/sass/_mixins.scss';
+
+div.row{
+
+    :nth-child(4n+1){
+        margin-right: 1.66%;
+    }
+
+    :nth-child(4n+2){
+        margin-right: 1.66%;
+        margin-left: 1.66%;
+    }
+
+    :nth-child(4n+3){
+        margin-right: 1.66%;
+        margin-left: 1.66%;
+    }
+
+    :nth-child(4n+4){
+        margin-left: 1.66%;
+    }
+
+    div.card{
+        border:none;
+        padding: 0;
+        max-width: 22.5%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        .brandimg{
+            max-width: 100%;
+            height: auto;
+            border:1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+    }
+}
+
+
+@include responsive(large){
+
+    div.row{
+    
+        :nth-child(3n+1){
+            margin-right: 1.5%;
+            margin-left: 1.5%;
+        }
+    
+        :nth-child(3n+2){
+            margin-right: 1.5%;
+            margin-left: 1.5%;
+        }
+    
+        :nth-child(3n+3){
+            margin-left: 1.5%;
+        }
+    
+        div.card{
+            border:none;
+            padding: 0;
+            max-width: 30%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+    
+            .brandimg{
+                max-width: 100%;
+                height: auto;
+                border:1px solid #ccc;
+                border-radius: 3px;
+                box-sizing: border-box;
+            }
+    
+        }
+    }
+
+}
